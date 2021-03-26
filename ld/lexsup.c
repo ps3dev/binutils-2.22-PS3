@@ -1212,6 +1212,8 @@ parse_args (unsigned argc, char **argv)
 	      link_info.shared = TRUE;
 	      link_info.pie = TRUE;
 	    }
+	  else if (config.has_pie)
+	    link_info.pie = TRUE;
 	  else
 	    einfo (_("%P%F: -pie not supported\n"));
 	  break;

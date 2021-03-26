@@ -259,6 +259,9 @@ typedef struct {
      parameter.  */
   bfd_boolean has_shared;
 
+  /* If TRUE, -pie is supported.  */
+  bfd_boolean has_pie;
+
   /* If TRUE, build constructors.  */
   bfd_boolean build_constructors;
 

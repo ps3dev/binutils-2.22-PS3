@@ -258,6 +258,14 @@ spu_elf_load_ovl_mgr (void)
   return total;
 }
 
+static void
+spu_before_parse (void)
+{
+  gld${EMULATION_NAME}_before_parse ();
+
+  config.has_pie = `if test -n "$GENERATE_PIE_SCRIPT" ; then echo TRUE ; else echo FALSE ; fi`;
+}
+
 /* Go find if we need to do anything special for overlays.  */
 
 static void
@@ -825,5 +833,6 @@ PARSE_AND_LIST_ARGS_CASES='
 
 LDEMUL_AFTER_OPEN=spu_after_open
 LDEMUL_BEFORE_ALLOCATION=spu_before_allocation
+LDEMUL_BEFORE_PARSE=spu_before_parse
 LDEMUL_FINISH=gld${EMULATION_NAME}_finish
 LDEMUL_CHOOSE_TARGET=gld${EMULATION_NAME}_choose_target
