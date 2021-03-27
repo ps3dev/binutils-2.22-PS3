@@ -103,7 +103,6 @@ gld${EMULATION_NAME}_before_parse (void)
 {
   ldfile_set_output_arch ("${OUTPUT_ARCH}", bfd_arch_`echo ${ARCH} | sed -e 's/:.*//'`);
   config.dynamic_link = ${DYNAMIC_LINK-TRUE};
-  config.has_pie = FALSE;
   config.has_shared = `if test -n "$GENERATE_SHLIB_SCRIPT" ; then echo TRUE ; else echo FALSE ; fi`;
 }
 

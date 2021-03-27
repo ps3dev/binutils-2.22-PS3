@@ -254,6 +254,7 @@ main (int argc, char **argv)
   config.make_executable = TRUE;
   config.magic_demand_paged = TRUE;
   config.text_read_only = TRUE;
+  config.has_pie = FALSE;
 
   command_line.warn_mismatch = TRUE;
   command_line.warn_search_mismatch = TRUE;
